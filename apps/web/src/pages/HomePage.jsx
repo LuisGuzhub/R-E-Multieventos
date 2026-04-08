@@ -51,10 +51,10 @@ const HomePage = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="heading-font text-5xl md:text-6xl lg:text-7xl font-bold text-accent-foreground mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
-                Eventos llave en mano que superan expectativas
+                Tu evento soñado, sin preocupaciones
               </h1>
               <p className="text-xl md:text-2xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Desde la planificación hasta el último detalle, nos encargamos de todo para que disfrutes tu momento especial
+                Asumimos la coordinación completa de principio a fin, cuidando cada detalle para que vivas tu momento especial con total libertad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6">
