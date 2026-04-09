@@ -53,21 +53,21 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://wa.me/5491112345678"
+                  href="https://wa.me/593981186064"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent-foreground/80 hover:text-accent-foreground transition-colors"
                 >
-                  +54 9 11 1234-5678
+                  +593 98 118 6064
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:info@remultieventos.com"
+                  href="mailto:rye_multieventos@hotmail.com"
                   className="text-accent-foreground/80 hover:text-accent-foreground transition-colors"
                 >
-                  info@remultieventos.com
+                  rye_multieventos@hotmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -84,7 +84,7 @@ const Footer = () => {
               Sábados: 10:00 - 14:00
             </p>
             <a
-              href="https://wa.me/5491112345678"
+              href="https://wa.me/593981186064"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200"

@@ -7,10 +7,11 @@ import { ArrowRight, Award, Users, Calendar, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
+import imagenPrincipal from '../assets/images/hero/imagen_principal.jpg';
 
 const HomePage = () => {
   const galleryImages = [
-    { src: 'https://images.unsplash.com/photo-1632610992723-82d7c212f6d7', alt: 'Elegant wedding reception with floral centerpieces' },
+    { src: imagenPrincipal, alt: 'Elegant event setup' },
     { src: 'https://images.unsplash.com/photo-1525441273400-056e9c7517b3', alt: 'Beautifully decorated wedding venue' },
     { src: 'https://images.unsplash.com/photo-1678274797624-792240d433dd', alt: 'Stunning event decoration with flowers' },
     { src: 'https://images.unsplash.com/photo-1653449195776-ffb5c38bc539', alt: 'Gourmet catering display' },
@@ -37,11 +38,11 @@ const HomePage = () => {
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1632610992723-82d7c212f6d7"
+              src={imagenPrincipal}
               alt="Elegant event setup"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-accent/95 via-accent/80 to-accent/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/95 via-accent/40 via-50% to-transparent"></div>
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -54,7 +55,9 @@ const HomePage = () => {
                 Tu evento soñado, sin preocupaciones
               </h1>
               <p className="text-xl md:text-2xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Asumimos la coordinación completa de principio a fin, cuidando cada detalle para que vivas tu momento especial con total libertad.
+                <span className="font-semibold">Asumimos la coordinación completa</span> de principio a fin,
+                <span className="font-semibold"> cuidando cada detalle</span> para que vivas tu momento especial
+                <span className="font-semibold"> con total libertad</span>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6">

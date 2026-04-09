@@ -72,8 +72,8 @@ const ContactoPage = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@remultieventos.com',
-      link: 'mailto:info@remultieventos.com'
+      content: 'rye_multieventos@hotmail.com',
+      link: 'mailto:rye_multieventos@hotmail.com'
     },
     {
       icon: MapPin,
@@ -180,7 +180,7 @@ const ContactoPage = () => {
                         onChange={handleChange}
                         required
                         className="text-foreground"
-                        placeholder="+54 9 11 1234-5678"
+                        placeholder="+593 98 118 6064"
                       />
                     </div>
 
@@ -299,7 +299,7 @@ const ContactoPage = () => {
                     size="lg"
                   >
                     <a
-                      href="https://wa.me/5491112345678"
+                      href="https://wa.me/593981186064"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

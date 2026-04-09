@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, ShoppingCart, ArrowRight } from 'lucide-react';
+import { Plus, ShoppingCart, ArrowRight, ImportIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
@@ -11,7 +11,8 @@ import Footer from '@/components/Footer.jsx';
 import QuoteItem from '@/components/QuoteItem.jsx';
 import ItemPreviewCard from '@/components/ItemPreviewCard.jsx';
 import QuantitySelector from '@/components/QuantitySelector.jsx';
-
+import { id } from 'date-fns/locale';
+import sillaPlas from '../assets/cotizador/silla-plastica.png';
 const CotizadorPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedItemId, setSelectedItemId] = useState('');
@@ -41,23 +42,29 @@ const CotizadorPage = () => {
     mobiliario: {
       name: 'Mobiliario',
       items: [
-        { id: 'mob1', name: 'Silla estándar', price: 2.50, description: 'Silla plegable o apilable básica para eventos informales.', image: 'https://images.unsplash.com/photo-1599757628564-db10729b97f1' },
-        { id: 'mob2', name: 'Silla tiffany dorada', price: 5.00, description: 'Elegantes sillas Tiffany en color dorado, ideales para bodas y eventos formales.', image: 'https://images.unsplash.com/photo-1496493012244-37fea64e1fe3' },
-        { id: 'mob3', name: 'Silla chiavari', price: 4.50, description: 'Silla clásica de diseño elegante para banquetes.', image: 'https://images.unsplash.com/photo-1574913746706-39f69232f7f5' },
-        { id: 'mob4', name: 'Mesa redonda', price: 15.00, description: 'Mesa redonda tradicional con capacidad para 8-10 invitados.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
-        { id: 'mob5', name: 'Mesa rectangular', price: 12.00, description: 'Mesa larga tipo tablón, perfecta para estilo imperial o buffet.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
-        { id: 'mob6', name: 'Mantel', price: 4.00, description: 'Mantelería de alta calidad en diversos colores.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
-        { id: 'mob7', name: 'Cubreilla con lazo', price: 2.00, description: 'Funda para silla con lazo decorativo a elección.', image: 'https://images.unsplash.com/photo-1496493012244-37fea64e1fe3' },
+        { id: 'mob1', name: 'Sillas de Plástico', price: 0.30, description: 'Sillas prácticas y resistentes, ideales para eventos casuales y de alto flujo.', img: { src: sillaPlas } },
+        { id: 'mob2', name: 'Sillas Tiffany Dorada', price: 2.00, description: 'Sillas elegantes estilo Tiffany en acabado dorado, perfectas para eventos sofisticados.', image: 'https://images.unsplash.com/photo-1496493012244-37fea64e1fe3' },
+        { id: 'mob3', name: 'Sillas Vestidas', price: 1.00, description: 'Sillas decoradas con forros y detalles elegantes para una presentación impecable.', image: 'https://images.unsplash.com/photo-1574913746706-39f69232f7f5' },
+        { id: 'mob4', name: 'Mesas de Plástico', price: 3.00, description: 'Mesas funcionales y versátiles, ideales para todo tipo de eventos y montajes.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'mob5', name: 'Mesas de Plástico Vestidas', price: 8.00, description: 'Mesas de estilo elegante que aportan distinción y armonía al ambiente del evento.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
+        { id: 'mob6', name: 'Mantel', price: 2.00, description: 'Manteles de alta calidad que realzan la presentación de cada mesa.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'mob7', name: 'Sobre Mantel', price: 2.00, description: 'Sobremanteles decorativos que añaden contraste y elegancia a la mesa.', image: 'https://images.unsplash.com/photo-1496493012244-37fea64e1fe3' },
       ]
     },
     decoracion: {
       name: 'Decoración',
       items: [
-        { id: 'dec1', name: 'Globos (paquete)', price: 8.00, description: 'Arreglos de globos en colores temáticos.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
-        { id: 'dec2', name: 'Flores frescas (arreglo)', price: 25.00, description: 'Centros de mesa con flores de estación.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
-        { id: 'dec3', name: 'Luces LED (metro)', price: 3.50, description: 'Iluminación cálida para ambientar espacios.', image: 'https://images.unsplash.com/photo-1498885145901-683e0e55d721' },
-        { id: 'dec4', name: 'Cortina de fondo', price: 20.00, description: 'Telón decorativo para mesa principal o photobooth.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
-        { id: 'dec5', name: 'Velas aromáticas (paquete)', price: 6.00, description: 'Set de velas para crear una atmósfera íntima.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
+        { id: 'dec1', name: 'Carpa Vestida con Flores', price: 450.00, description: 'Carpa decorada con telas y arreglos florales que crean un ambiente elegante y sofisticado.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec2', name: 'Carpa vestida con Forros', price: 300.00, description: 'Carpa cubierta con telas decorativas que aportan estilo y armonía al espacio del evento.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
+        { id: 'dec3', name: 'Tules', price: 40.00, description: 'Tela decorativa ligera ideal para ambientar espacios y crear efectos visuales delicados.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec4', name: 'Letras "LOVE"', price: 40.00, description: 'Letras iluminadas que aportan un toque romántico y especial al evento.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
+        { id: 'dec5', name: 'Letras Personalizadas', price: 40.00, description: 'Letras decorativas personalizadas con nombres o frases para destacar momentos únicos.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec6', name: 'Número "15"', price: 40.00, description: 'Número decorativo ideal para resaltar celebraciones de quinceañera con estilo.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec7', name: 'Sillón para Quinceañera', price: 30.00, description: 'Sillón elegante diseñado para realzar el protagonismo de la quinceañera.', image: 'https://images.unsplash.com/photo-1498885145901-683e0e55d721' },
+        { id: 'dec8', name: 'Decoración con mesas Tifanny', price: 500.00, description: 'Montaje completo con mesas Tiffany que brinda un ambiente exclusivo y sofisticado.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec9', name: 'Centro de mesa', price: 15.00, description: 'Decoración central que aporta elegancia y armonía a cada mesa del evento.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec11', name: 'Base para el centro de mesa', price: 3.00, description: 'Base decorativa que complementa y eleva la presentación del centro de mesa.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec12', name: 'Estructura de la pista de baile', price: 300.00, description: 'Estructura firme y segura que define el espacio ideal para disfrutar la pista de baile.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
       ]
     },
     catering: {
@@ -65,29 +72,28 @@ const CotizadorPage = () => {
       items: [
         { id: 'cat1', name: 'Buffet básico (por persona)', price: 12.00, description: 'Opciones clásicas de recepción y plato principal.', image: 'https://images.unsplash.com/photo-1653449195776-ffb5c38bc539' },
         { id: 'cat2', name: 'Buffet premium (por persona)', price: 18.00, description: 'Experiencia culinaria superior con ingredientes selectos.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
-        { id: 'cat3', name: 'Bebidas (por persona)', price: 3.00, description: 'Gaseosas, aguas y jugos libres durante el evento.', image: 'https://images.unsplash.com/photo-1653449195776-ffb5c38bc539' },
-        { id: 'cat4', name: 'Postres (paquete)', price: 15.00, description: 'Mesa dulce variada para compartir.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
-        { id: 'cat5', name: 'Café y té (por persona)', price: 2.00, description: 'Servicio de cafetería para el cierre del evento.', image: 'https://images.unsplash.com/photo-1653449195776-ffb5c38bc539' },
+        { id: 'cat3', name: 'Soft(No alcohol)', price: 3.00, description: 'Gaseosas, aguas y jugos libres durante el evento.', image: 'https://images.unsplash.com/photo-1653449195776-ffb5c38bc539' },
+        { id: 'cat4', name: 'Bocaditos', price: 15.00, description: 'Mesa dulce variada para compartir.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
+        { id: 'cat5', name: 'Postres', price: 2.00, description: 'Servicio de cafetería para el cierre del evento.', image: 'https://images.unsplash.com/photo-1653449195776-ffb5c38bc539' },
+        { id: 'cat6', name: 'Cocteles', price: 8.00, description: 'Bebidas alcohólicas y cócteles clásicos para animar tu evento.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
       ]
     },
     sonido: {
       name: 'Sonido & Animación',
       items: [
         { id: 'son1', name: 'DJ (por hora)', price: 50.00, description: 'Musicalización profesional adaptada a tu estilo.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
-        { id: 'son2', name: 'Micrófono inalámbrico', price: 10.00, description: 'Micrófono de alta fidelidad para discursos y brindis.', image: 'https://images.unsplash.com/photo-1498885145901-683e0e55d721' },
-        { id: 'son3', name: 'Luces de pista', price: 30.00, description: 'Efectos de iluminación rítmica para la pista de baile.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
-        { id: 'son4', name: 'Animador/Maestro de ceremonias', price: 40.00, description: 'Conducción profesional para guiar los momentos del evento.', image: 'https://images.unsplash.com/photo-1498885145901-683e0e55d721' },
-        { id: 'son5', name: 'Sistema de sonido completo', price: 60.00, description: 'Parlantes, consola y amplificación para todo el salón.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'son2', name: 'Luces de pista', price: 30.00, description: 'Efectos de iluminación rítmica para la pista de baile.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'son3', name: 'Animador/Maestro de ceremonias', price: 40.00, description: 'Conducción profesional para guiar los momentos del evento.', image: 'https://images.unsplash.com/photo-1498885145901-683e0e55d721' },
+        { id: 'son4', name: 'Proyector', price: 60.00, description: 'Parlantes, consola y amplificación para todo el salón.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
       ]
     },
     salon: {
       name: 'Salón',
       items: [
-        { id: 'sal1', name: 'Salón pequeño (hasta 50 personas)', price: 150.00, description: 'Espacio íntimo ideal para cumpleaños y reuniones familiares.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
-        { id: 'sal2', name: 'Salón mediano (hasta 100 personas)', price: 250.00, description: 'Salón versátil con pista de baile y sector de mesas.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
-        { id: 'sal3', name: 'Salón grande (hasta 200 personas)', price: 400.00, description: 'Amplio espacio para bodas y eventos corporativos.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
-        { id: 'sal4', name: 'Salón VIP (hasta 300 personas)', price: 600.00, description: 'Instalaciones premium con áreas exclusivas y jardines.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
-        { id: 'sal5', name: 'Estacionamiento incluido', price: 25.00, description: 'Servicio de valet parking y seguridad para vehículos.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'sal1', name: 'Hotel Presidente (hasta 300 personas)', price: 150.00, description: 'Espacio íntimo ideal para cumpleaños y reuniones familiares.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'sal2', name: 'Local Ambar (hasta 100 personas)', price: 250.00, description: 'Salón versátil con pista de baile y sector de mesas.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
+        { id: 'sal3', name: 'Local Rivaldel (hasta 200 personas)', price: 400.00, description: 'Amplio espacio para bodas y eventos corporativos.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'sal4', name: 'Club Social Aerotécnicos FAE (hasta 300 personas)', price: 600.00, description: 'Instalaciones premium con áreas exclusivas y jardines.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
       ]
     }
   };
@@ -120,7 +126,7 @@ const CotizadorPage = () => {
 
     setQuote(prev => [...prev, newItem]);
     toast.success(`${quantity}x ${itemData.name} agregado a la cotización`);
-    
+
     // Reset selection
     setSelectedItemId('');
     setQuantity(1);
@@ -131,13 +137,13 @@ const CotizadorPage = () => {
     toast.success('Item eliminado de la cotización');
   };
 
-  const selectedItemData = selectedCategory && selectedItemId 
+  const selectedItemData = selectedCategory && selectedItemId
     ? serviceCategories[selectedCategory].items.find(i => i.id === selectedItemId)
     : null;
 
   const totalPrice = quote.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
-  const formatUSD = (value) => 
+
+  const formatUSD = (value) =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
 
   return (
@@ -174,7 +180,7 @@ const CotizadorPage = () => {
                     <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm">1</span>
                     Selección de Servicios
                   </h2>
-                  
+
                   <div className="space-y-6">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
@@ -231,18 +237,18 @@ const CotizadorPage = () => {
                       className="space-y-6"
                     >
                       <ItemPreviewCard item={selectedItemData} />
-                      
+
                       <div className="bg-card border border-border rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                         <div>
                           <label className="block text-sm font-medium text-foreground mb-2">
                             Cantidad requerida
                           </label>
-                          <QuantitySelector 
-                            quantity={quantity} 
-                            onChange={setQuantity} 
+                          <QuantitySelector
+                            quantity={quantity}
+                            onChange={setQuantity}
                           />
                         </div>
-                        
+
                         <Button
                           onClick={handleAddToQuote}
                           size="lg"
@@ -269,7 +275,7 @@ const CotizadorPage = () => {
                       <p className="text-accent-foreground/70 text-sm">{quote.length} items seleccionados</p>
                     </div>
                   </div>
-                  
+
                   {quote.length === 0 ? (
                     <div className="text-center py-12 px-4 bg-accent-foreground/5 rounded-xl border border-accent-foreground/10 dashed">
                       <ShoppingCart className="w-12 h-12 mx-auto text-accent-foreground/30 mb-4" />
@@ -287,7 +293,7 @@ const CotizadorPage = () => {
                           />
                         ))}
                       </div>
-                      
+
                       <div className="bg-background text-foreground rounded-xl p-6 shadow-inner">
                         <div className="flex justify-between items-end mb-6">
                           <div>
@@ -298,7 +304,7 @@ const CotizadorPage = () => {
                             {formatUSD(totalPrice)}
                           </span>
                         </div>
-                        
+
                         <Button
                           asChild
                           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 text-lg"
