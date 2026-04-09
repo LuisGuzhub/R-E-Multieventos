@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    /* Solid White Background */
+    --background: 0 0% 100%;
+    /* Vino Burgundy Text #722F37 */
+    --foreground: 353 42% 32%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 353 42% 32%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 353 42% 32%;
+    
+    /* Vino Burgundy #722F37 */
+    --primary: 353 42% 32%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Subtle Blush */
+    --secondary: 353 20% 96%;
+    --secondary-foreground: 353 42% 32%;
+    
+    /* Subtle Blush Accents */
+    --muted: 353 20% 96%;
+    --muted-foreground: 353 20% 45%;
+    
+    /* Dorado Gold #D4AF37 */
+    --accent: 46 59% 52%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 353 15% 90%;
+    --input: 353 15% 90%;
+    --ring: 46 59% 52%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    /* Keeping dark mode elegant but aligned with brand */
+    --background: 353 42% 8%;
+    --foreground: 353 20% 96%;
+    
+    --card: 353 42% 10%;
+    --card-foreground: 353 20% 96%;
+    
+    --popover: 353 42% 10%;
+    --popover-foreground: 353 20% 96%;
+    
+    --primary: 353 42% 32%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 353 30% 15%;
+    --secondary-foreground: 353 20% 96%;
+    
+    --muted: 353 30% 15%;
+    --muted-foreground: 353 20% 70%;
+    
+    --accent: 46 59% 52%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 353 30% 20%;
+    --input: 353 30% 20%;
+    --ring: 46 59% 52%;
+  }
+}
+
+@layer components {
+  .heading-font {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.02em;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide number input arrows */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
