@@ -12,6 +12,10 @@ import QuoteItem from '@/components/QuoteItem.jsx';
 import ItemPreviewCard from '@/components/ItemPreviewCard.jsx';
 import QuantitySelector from '@/components/QuantitySelector.jsx';
 import { id } from 'date-fns/locale';
+<<<<<<< HEAD
+=======
+import sillaPlas from '../assets/cotizador/silla-plastica.png';
+>>>>>>> e5fb1771c485d4198f5be2c67d935080d3f0cce0
 const CotizadorPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedItemId, setSelectedItemId] = useState('');
@@ -41,6 +45,7 @@ const CotizadorPage = () => {
     mobiliario: {
       name: 'Mobiliario',
       items: [
+<<<<<<< HEAD
         { id: 'mob1', name: 'Sillas de Plástico', price: 0.30, description: 'Sillas prácticas y resistentes, ideales para eventos casuales y de alto flujo.', image: new URL('../assets/cotizador/mobiliario/silla_plastica.png', import.meta.url).href },
         { id: 'mob2', name: 'Sillas Tiffany Dorada', price: 2.00, description: 'Sillas elegantes estilo Tiffany en acabado dorado, perfectas para eventos sofisticados.', image: new URL('../assets/cotizador/mobiliario/silla_tiffanny.png', import.meta.url).href },
         { id: 'mob3', name: 'Sillas Vestidas', price: 1.00, description: 'Sillas decoradas con forros y detalles elegantes para una presentación impecable.', image: new URL('../assets/cotizador/mobiliario/silla_vestida.png', import.meta.url).href },
@@ -48,11 +53,21 @@ const CotizadorPage = () => {
         { id: 'mob5', name: 'Mesas de Plástico Vestidas', price: 8.00, description: 'Mesas de estilo elegante que aportan distinción y armonía al ambiente del evento.', image: new URL('../assets/cotizador/mobiliario/mesa_plástica_vestida.png', import.meta.url).href },
         { id: 'mob6', name: 'Mantel', price: 2.00, description: 'Manteles de alta calidad que realzan la presentación de cada mesa.', image: new URL('../assets/cotizador/mobiliario/mantel_base.png', import.meta.url).href },
         { id: 'mob7', name: 'Sobre Mantel', price: 2.00, description: 'Sobremanteles decorativos que añaden contraste y elegancia a la mesa.', image: new URL('../assets/cotizador/mobiliario/sobre_mantel.png', import.meta.url).href },
+=======
+        { id: 'mob1', name: 'Sillas de Plástico', price: 0.30, description: 'Sillas prácticas y resistentes, ideales para eventos casuales y de alto flujo.', img: { src: sillaPlas } },
+        { id: 'mob2', name: 'Sillas Tiffany Dorada', price: 2.00, description: 'Sillas elegantes estilo Tiffany en acabado dorado, perfectas para eventos sofisticados.', image: 'https://images.unsplash.com/photo-1496493012244-37fea64e1fe3' },
+        { id: 'mob3', name: 'Sillas Vestidas', price: 1.00, description: 'Sillas decoradas con forros y detalles elegantes para una presentación impecable.', image: 'https://images.unsplash.com/photo-1574913746706-39f69232f7f5' },
+        { id: 'mob4', name: 'Mesas de Plástico', price: 3.00, description: 'Mesas funcionales y versátiles, ideales para todo tipo de eventos y montajes.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'mob5', name: 'Mesas de Plástico Vestidas', price: 8.00, description: 'Mesas de estilo elegante que aportan distinción y armonía al ambiente del evento.', image: 'https://images.unsplash.com/photo-1690332538891-8ee943e8b5c5' },
+        { id: 'mob6', name: 'Mantel', price: 2.00, description: 'Manteles de alta calidad que realzan la presentación de cada mesa.', image: 'https://images.unsplash.com/photo-1683918023703-b9e537e818f6' },
+        { id: 'mob7', name: 'Sobre Mantel', price: 2.00, description: 'Sobremanteles decorativos que añaden contraste y elegancia a la mesa.', image: 'https://images.unsplash.com/photo-1496493012244-37fea64e1fe3' },
+>>>>>>> e5fb1771c485d4198f5be2c67d935080d3f0cce0
       ]
     },
     decoracion: {
       name: 'Decoración',
       items: [
+<<<<<<< HEAD
         { id: 'dec1', name: 'Carpa Vestida con Flores', price: 450.00, description: 'Carpa decorada con telas y arreglos florales que crean un ambiente elegante y sofisticado.', image: new URL('../assets/cotizador/decoracion/carpa_flores.png', import.meta.url).href },
         { id: 'dec2', name: 'Carpa vestida con Forros', price: 300.00, description: 'Carpa cubierta con telas decorativas que aportan estilo y armonía al espacio del evento.', image: new URL('../assets/cotizador/decoracion/carpa_forro.png', import.meta.url).href },
         { id: 'dec3', name: 'Tules', price: 40.00, description: 'Tela decorativa ligera ideal para ambientar espacios y crear efectos visuales delicados.', image: new URL('../assets/cotizador/decoracion/tules.png', import.meta.url).href },
@@ -65,6 +80,19 @@ const CotizadorPage = () => {
         { id: 'dec11', name: 'Base para el centro de mesa', price: 3.00, description: 'Base decorativa que complementa y eleva la presentación del centro de mesa.', image: new URL('../assets/cotizador/decoracion/base_centro.png', import.meta.url).href },
         { id: 'dec12', name: 'Estructura de la pista de baile', price: 300.00, description: 'Estructura firme y segura que define el espacio ideal para disfrutar la pista de baile.', image: new URL('../assets/cotizador/decoracion/pista_baile.png', import.meta.url).href },
         { id: 'dec13', name: 'Pared revestida con Flores', price: 200.00, description: 'Pared decorativa revestida con arreglos florales que crean un ambiente elegante y sofisticado.', image: new URL('../assets/cotizador/decoracion/pared_flores.png', import.meta.url).href },
+=======
+        { id: 'dec1', name: 'Carpa Vestida con Flores', price: 450.00, description: 'Carpa decorada con telas y arreglos florales que crean un ambiente elegante y sofisticado.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec2', name: 'Carpa vestida con Forros', price: 300.00, description: 'Carpa cubierta con telas decorativas que aportan estilo y armonía al espacio del evento.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
+        { id: 'dec3', name: 'Tules', price: 40.00, description: 'Tela decorativa ligera ideal para ambientar espacios y crear efectos visuales delicados.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec4', name: 'Letras "LOVE"', price: 40.00, description: 'Letras iluminadas que aportan un toque romántico y especial al evento.', image: 'https://images.unsplash.com/photo-1694158142493-ffa63547e0b2' },
+        { id: 'dec5', name: 'Letras Personalizadas', price: 40.00, description: 'Letras decorativas personalizadas con nombres o frases para destacar momentos únicos.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec6', name: 'Número "15"', price: 40.00, description: 'Número decorativo ideal para resaltar celebraciones de quinceañera con estilo.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec7', name: 'Sillón para Quinceañera', price: 30.00, description: 'Sillón elegante diseñado para realzar el protagonismo de la quinceañera.', image: 'https://images.unsplash.com/photo-1498885145901-683e0e55d721' },
+        { id: 'dec8', name: 'Decoración con mesas Tifanny', price: 500.00, description: 'Montaje completo con mesas Tiffany que brinda un ambiente exclusivo y sofisticado.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec9', name: 'Centro de mesa', price: 15.00, description: 'Decoración central que aporta elegancia y armonía a cada mesa del evento.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec11', name: 'Base para el centro de mesa', price: 3.00, description: 'Base decorativa que complementa y eleva la presentación del centro de mesa.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+        { id: 'dec12', name: 'Estructura de la pista de baile', price: 300.00, description: 'Estructura firme y segura que define el espacio ideal para disfrutar la pista de baile.', image: 'https://images.unsplash.com/photo-1528435616957-dd0479cba90b' },
+>>>>>>> e5fb1771c485d4198f5be2c67d935080d3f0cce0
       ]
     },
     catering: {
